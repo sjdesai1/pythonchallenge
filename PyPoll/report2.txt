@@ -1,0 +1,6 @@
+Election Results 
+====================
+ Total Votes: 4324001
+ Candidates: 'Vestal': 385440, 'Torres': 353320, 'Seth': 40150, 'Cordin': 24090, 'Khan': 2218231, 'Correy': 704200, 'Li': 492940, 'OTooley': 105630
+ Percentages: Vestal : 0.48 Torres : 0.44 Seth : 0.05 Cordin : 0.03 Khan : (0.6300256659966867,) Correy : (0.19999994319797126,) Li(0.13999996023857988,) O'Tooley : 0.02992330874089499
+ 'Winners : Vestal , Khan
