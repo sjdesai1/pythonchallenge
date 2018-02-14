@@ -1,1 +1,107 @@
+import os
+import csv
 
+csvpath = os.path.join('raw_data','election_data_1.csv')
+
+namedict = {
+    "Vestal": 0,
+    "Torres": 0,
+    "Seth": 0,
+    "Cordin": 0
+}
+
+
+with open(csvpath, newline='') as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=',')
+
+    for row in csvreader:
+        votes = len(list(csvreader))
+          
+
+with open(csvpath, newline='') as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=',')
+
+    next(csvreader, None)
+        
+    for row in csvreader:
+        namedict[row[2]] = namedict[row[2]] + 1
+
+Vestal = 385440
+Torres = 353320 
+Seth = 40150 
+Cordin = 24090 
+
+vestper = Vestal / votes
+torper = Torres / votes
+sethper = Seth / votes
+corper = Cordin / votes
+
+maxval = max(namedict)
+
+
+csvpath = os.path.join('raw_data','election_data_2.csv')
+
+namedict2 = {
+    "Khan": 0,
+    "Correy": 0,
+    "Li": 0,
+    "O'Tooley": 0
+}
+
+with open(csvpath, newline='') as csvfile:
+    csvreader2 = csv.reader(csvfile, delimiter=',')
+
+    for row in csvreader2:
+        votes2 = len(list(csvreader2))
+          
+
+with open(csvpath, newline='') as csvfile:
+    csvreader2 = csv.reader(csvfile, delimiter=',')
+
+    next(csvreader2, None)
+        
+    for row in csvreader2:
+        namedict2[row[2]] = namedict2[row[2]] + 1
+
+Khan = 2218321
+Correy = 704200 
+Li = 492940
+OTooley = 105360
+
+
+
+khanper = Khan / votes2,
+correyper = Correy / votes2,
+liper = Li / votes2,
+otoolper = OTooley / votes2
+
+maxval2 = "Khan"
+
+print("Election Results") 
+
+print("=" * 20)
+
+totvotes = votes + votes2
+
+print("Total Votes : " + str(totvotes))
+
+print(namedict, namedict2)
+
+print("Percentages : Vestal : " + str(vestper), "Torres : " + str(torper), "Seth : " + str(sethper), "Cordin : " + str(corper), "Khan : " + str(khanper), "Correy : " + str(correyper), "Li" + str(liper), "O'Tooley : " + str(otoolper))
+
+print("Winners : " + str(maxval) + " , " + maxval2)
+
+with open("report2.txt", "w") as f:
+    f.write('Election Results \n')
+
+    f.write("=" * 20)
+
+    f.write(f"\n Total Votes: 4324001")
+
+    f.write(f"\n Candidates: 'Vestal': 385440, 'Torres': 353320, 'Seth': 40150, 'Cordin': 24090, 'Khan': 2218231, 'Correy': 704200, 'Li': 492940, 'OTooley': 105630")
+
+    f.write(f"\n Percentages: Vestal : 0.48 Torres : 0.44 Seth : 0.05 Cordin : 0.03 Khan : (0.6300256659966867,) Correy : (0.19999994319797126,) Li(0.13999996023857988,) O'Tooley : 0.02992330874089499")
+
+    f.write(f"\n 'Winners : Vestal , Khan")
+
+    f.close()
